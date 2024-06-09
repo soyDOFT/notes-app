@@ -2,7 +2,7 @@
 Focus away on the backend of the application to concentrate on learning how to utilize JavaScript in Node.
 
 # Purpose
-This app allows storing notes with 
+This app allows storing notes using the command line and a .json file 
 
 # Commands
 ## add
