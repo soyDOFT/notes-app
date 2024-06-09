@@ -1,7 +1,5 @@
-const chalk = require('chalk');
-const fs = require('fs');
-const yargs = require('yargs');
-const notes = require('./notes.js');
+const yargs = require('yargs'); //import yargs module for retrieving filtered input
+const notes = require('./notes.js'); //import notes.js module for interacting with notes app
 
 yargs.version('1.0.0'); //custom yargs version
 
@@ -9,16 +7,16 @@ yargs.version('1.0.0'); //custom yargs version
 yargs.command({
     command: 'add', //Name the command
     describe: 'Add new note', //Description for add command
-    builder: {
+    builder: { //Commands settings
         title: {
-            describe: 'Note title',
-            demandOption: true,
-            type: 'string'
+            describe: 'Note title', // argument description
+            demandOption: true, //require title
+            type: 'string' //set allowed data
         },
         body: {
-            describe: 'Note body',
-            demandOption: true,
-            type: 'string'
+            describe: 'Note body', // argument description
+            demandOption: true, //require body
+            type: 'string' //set allowed data
         }
     },
     handler(argv) {
@@ -32,9 +30,9 @@ yargs.command({
     describe: 'Remove a note', //Description for remove command
     builder: {
         title: {
-            describe: '',
-            demandOption: true,
-            type: 'string'
+            describe: 'title to be removed', //argument description
+            demandOption: true, //require title
+            type: 'string' //set allowed data
         }
     },
     handler(argv) {
@@ -48,9 +46,9 @@ yargs.command({
     describe: 'Reads a note', //Description for read command
     builder: {
         title: {
-            describe: '',
-            demandOption: true,
-            type: 'string'
+            describe: '', //argument description
+            demandOption: true, //require title
+            type: 'string' //set allowed data
         }
     },
     handler(argv) {
@@ -64,9 +62,9 @@ yargs.command({
     describe: 'Lists out all notes',
     builder: {
         title: {
-            describe: '',
-            demandOption: true,
-            type: 'string'
+            describe: '', //argument description
+            demandOption: true, //require title
+            type: 'string' //set allowed data
         }
     },
     handler() {
@@ -74,4 +72,4 @@ yargs.command({
     }
 });
 
-yargs.parse();
+yargs.parse(); //Runs the program
